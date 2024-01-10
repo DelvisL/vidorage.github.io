@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vidorage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+#bod{
+max-width:500px;
+}
+</style>
+<body id="bod">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+body{
+background-color:lightblue;}
+</style>
+
+<h1 id="title">
+<style>
+#title {text-color:blue;font-size:300%;margin-top:5px;float:right;position:relative;left:250px;}
+</style>
+Vidorage
+</h1>
+<h1 id=logoimg>
+<img src='https://delvisl.github.io/Tiktoksampleapi.github.io/' width="50" height="75" id="logo">
+<style>
+#logo {
+border-radius:25px;border-color:blue;border-style:dotted;margin-left:500px;top:-100px;position:relative}
+</style>
+</h1>
+
+<h2 style="margin-right:-855px;margin-left:-10px">
+<ul style="text-align:center;margin-top:-100px;background-color:black;height:40px;">
+<li>
+<a href="file:///C:/Users/Delvis/Documents/sample.htm" style="background-color:white;">Home</a>
+</li>
+<li id="about">
+<a href=" " style="background-color:white;" id="about_link">
+About
+<script>
+document.getElementById("about_link").addEventListener("click",about_func);
+function about_func() {
+const l=window.open();
+l.document.open();
+l.document.write("<body></body>");
+
+l.document.write("<a>HOME</a>");
+h1_att=l.document.createAttribute("style");
+h1_att.value="margin-left:575px;font-weight:bold;font-size:50px;color:white;background-color:black";
+l.document.getElementsByTagName("a")[0].setAttributeNode(h1_att);
+l.document.getElementsByTagName("a")[0].setAttribute("href","https://delvisl.github.io/Tiktoksampleapi.github.io/");
+
+l.document.writeln("<h2>Vidorage is a video storage application. It allows you to save all the videos that you love in one place. From youtube to tiktok, we look to provide a space for you to remember memorable videos. This applications also looks to provide tiktok repost abilities smetime in the near future. Stick around and enjoy Vidorage.</h2>");
+att=l.document.createAttribute("style");
+att.value="font-size:40px;border-style:solid;text-align:center;margin-left:400px;margin-right:400px;margin-top:100px";
+const h2=l.document.getElementsByTagName("h2")[0];
+h2.setAttributeNode(att);
+l.document.body.style.backgroundColor = "lightblue";
+
+}
+</script>
+</a>
+</li>
+</ul>
+<style>
+li {display:inline;margin-right:30px;color:white;font-size:30px;}
+</style>
+</h2>
+
+<p style="font-size:30px;position:relative;left:500px;top:100px">
+Login to TIKTOK
+<i class="material-icons">arrow_forward</i>
+<a href="https://play-lh.googleusercontent.com/Ui_-OW6UJI147ySDX9guWWDiCPSq1vtxoC-xG17BU2FpU0Fi6qkWwuLdpddmT9fqrA=w240-h480-rw"><img src="https://play-lh.googleusercontent.com/Ui_-OW6UJI147ySDX9guWWDiCPSq1vtxoC-xG17BU2FpU0Fi6qkWwuLdpddmT9fqrA=w240-h480-rw" id="tiktokimg">
+</a>
+<style>
+#tiktokimg {width:40px;height:40px;margin-top:25px;}
+</style>
+</p>
+
+<p style="position:relative;left:500px;font-size:30px;top:100px" id="r">
+Link to video:
+<input id="o" size="30" onchange="videos()";>
+<script>
+function videos() {
+
+const vid=document.createElement("iframe");
+
+const end=document.getElementById("bod").appendChild(vid);
+
+end.setAttribute("id","addin");
+
+document.getElementById("addin").setAttribute
+("src",document.getElementById("o").value);
+
+document.getElementById("addin").style.marginLeft="600px";
+}
+
+
+</script>
+<button onclick="myfunc()");">
+<a id="k">Download</a>
+</button>
+<script>
+function myfunc() {
+window.open("https://www.youtube.com/embed/tVQgfKqbX3M?si=_n6Ke-BU-Srk1R2p");}
+
+</script>
+
+</p>
+
+
+
+</video>
+</body>
+</head>
+</html>
