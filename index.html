@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vidorage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+#bod{
+max-width:500px;
+}
+</style>
+<body id="bod">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+body{
+background-color:lightblue;}
+</style>
+
+<h1 id="title">
+<style>
+#title {text-color:blue;font-size:300%;margin-top:5px;float:right;position:relative;left:275px;}
+</style>
+Vidorage
+</h1>
+<h1 id=logoimg>
+<img src='https://www.weareconvoy.com/wp-content/uploads/2021/03/3_clarke_and_company.jpg' width="50" height="75" id="logo">
+<style>
+#logo {
+border-radius:25px;border-color:blue;border-style:dotted;margin-left:525px;top:-100px;position:relative}
+</style>
+</h1>
+
+<h2 style="margin-right:-860px;margin-left:-50px">
+<ul style="text-align:center;margin-top:-100px;background-color:black;height:40px;">
+<li>
+<a href="file:///C:/Users/Delvis/Documents/Vidorage%20Website/index.html" style="color:white;">Home</a>
+</li>
+<li id="about">
+<a href="file:///C:/Users/Delvis/Documents/Vidorage%20Website/About.html" style="color:white;" id="about_link">
+About
+</a>
+</li>
+</ul>
+<style>
+li {display:inline;margin-right:30px;color:white;font-size:30px;}
+</style>
+</h2>
+
+<p id="r">
+<table width=125% height=150px style="background-color:White;position:relative;left:400px;top:150px;border:5px solid;">
+<th  style="font-size:30px;">
+Link to video:
+<input id="o" size="30" onchange="videos()";>
+<script>
+function videos() {
+
+if (document.getElementById("addin")!=null)
+{
+const iframe=document.getElementById("addin");
+iframe.remove();}
+
+
+const vid=document.createElement("iframe");
+
+const end=document.getElementById("r").appendChild(vid);
+
+end.setAttribute("id","addin");
+
+document.getElementById("addin").setAttribute
+("src",document.getElementById("o").value);
+
+document.getElementById("addin").style.position='relative';
+document.getElementById("addin").style.left='450px';
+document.getElementById("addin").style.top='500px';
+document.getElementById("addin").style.width="100%";
+document.getElementById("addin").style.height="100%";
+
+}
+</script>
+<button onclick="myfunc()");">
+<a id="k" download> Download </a>
+</button>
+</th>
+</table>
+<script>
+function myfunc() {
+
+const iframe=document.getElementById("addin");
+iframe.remove();
+
+
+}
+
+</script>
+
+</p>
+
+<p>
+<ul id="policies">
+<li><a href="https://www.termsfeed.com/live/2ab2e0ad-65f6-4f82-b98a-b8f5ee73ac30" style="color:white;">
+terms of service
+</a></li>
+<li>
+<a href="https://www.termsfeed.com/live/7e6dc0ee-cf85-4fcf-b656-fa92d7b393ea" style="color:white;">
+privacy policy
+</a></li>
+</ul>
+</p>
+<style>
+#policies li{
+font-size:15px;position:relative;bottom:-390px;left:500px;}
+</style>
+</body>
+</head>
+</html>
