@@ -52,7 +52,10 @@ Link to video:
 <input id="o" size="30" onchange="videos()";>
 <script>
 function videos() {
-
+fetch("http://localhost:3000/").then((res)=>{
+  res.text(); }
+  ).then((text)=>{console.log(text);}
+         );
 if (document.getElementById("addin")!=null)
 {
 const iframe=document.getElementById("addin");
