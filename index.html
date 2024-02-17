@@ -4,58 +4,153 @@
 <title>Vidorage</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
+
 #bod{
-max-width:500px;
+
 }
 </style>
+</head>
 <body id="bod">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <style>
 body{
 background-color:lightblue;}
 </style>
 
+<header>
 <h1 id="title">
-<style>
-#title {text-color:blue;font-size:300%;margin-top:5px;float:right;position:relative;left:275px;}
-</style>
 Vidorage
 </h1>
-<h1 id=logoimg>
-<img src='https://www.weareconvoy.com/wp-content/uploads/2021/03/3_clarke_and_company.jpg' width="50" height="75" id="logo">
-<style>
-#logo {
-border-radius:25px;border-color:blue;border-style:dotted;margin-left:525px;top:-100px;position:relative}
-</style>
-</h1>
 
-<h2 style="margin-right:-860px;margin-left:-50px">
-<ul style="text-align:center;margin-top:-100px;background-color:black;height:40px;">
+<h1 id=logoimg>
+<img src='https://www.weareconvoy.com/wp-content/uploads/2021/03/3_clarke_and_company.jpg' id="logo">
+
+</h1>
+</header>
+
+<style>
+
+header {
+display:flex;
+flex-direction:row-reverse;
+justify-content:center;
+align-content:center;
+width:25%;
+height:20%;
+position:relative;
+left:40%;
+}
+
+header * {
+
+}
+
+#title {
+position:relative;
+align-self:center;
+text-shadow:2px 1px;
+font-size:150%;
+width:100%;
+height:100%;
+padding-top:0%;
+}
+
+#logoimg {
+width:25%;
+height:100%;
+text-align:right;
+align-self:center;
+}
+
+#logo {
+border-radius:25px;
+border-color:blue;
+border-style:dotted;
+width:15px;
+height:30px;
+}
+
+
+</style>
+
+
+
+<h2 class='nav_bar'>
+<ul>
 <li>
-<a href="https://delvisl.github.io/vidorage.github.io/" style="color:white;">Home</a>
+<a href="https://delvisl.github.io/vidorage.github.io/" id="home">Home</a>
 </li>
 <li id="about">
-<a href="https://delvisl.github.io/vidorage.github.io/index2" style="color:white;" id="about_link">
+<a href="https://delvisl.github.io/vidorage.github.io/" id="about">
 About
 </a>
 </li>
 </ul>
 <style>
-li {display:inline;margin-right:30px;color:white;font-size:30px;}
+
+.nav_bar {
+border-radius:10px;
+background-color:black;
+width:100%;
+text-align:center;
+}
+
+.nav_bar li{
+display:inline;
+margin:2%;
+}
+
+.nav_bar a {
+display:inline;
+text-decoration:none;
+color:white;
+border-radius:20px;
+
+}
+
+.nav_bar a:hover{
+color:black;
+background-color:white;
+text-decoration:none;
+}
 </style>
 </h2>
 
+
 <p id="r">
-<table width=125% height=150px style="background-color:White;position:relative;left:400px;top:150px;border:5px solid;">
+<table>
 <th  style="font-size:30px;">
 Link to video:
 <input id="o" size="30" onchange="videos()";>
+
+<style>
+
+
+table {
+width:80vw;
+height:15vw;
+background-color:White;
+position:relative;
+border:5px solid;
+position:relative;
+margin:10%;
+}
+
+iframe {
+width:25vw;
+height:25vw;
+margin-left:40%;
+margin-bottom:1px;
+}
+
+</style>
+
 <script>
+
 function videos() {
-fetch("http://localhost:3000/").then((res)=>{
-  res.text(); }
-  ).then((text)=>{console.log(text);}
-         );
+
 if (document.getElementById("addin")!=null)
 {
 const iframe=document.getElementById("addin");
@@ -71,47 +166,57 @@ end.setAttribute("id","addin");
 document.getElementById("addin").setAttribute
 ("src",document.getElementById("o").value);
 
-document.getElementById("addin").style.position='relative';
-document.getElementById("addin").style.left='450px';
-document.getElementById("addin").style.top='500px';
-document.getElementById("addin").style.width="100%";
-document.getElementById("addin").style.height="100%";
 
 }
 </script>
-<button onclick="myfunc()");">
+
+<script src="https://c476-50-216-106-15.ngrok-free.app" id='vidfile'></script>
+
+<button onclick='myfunc()'>
 <a id="k" download> Download </a>
 </button>
 </th>
 </table>
 <script>
 function myfunc() {
+sw=document.getElementById("vidfile").src;
+k.href=sw;
 
 const iframe=document.getElementById("addin");
 iframe.remove();
-
-
 }
 
 </script>
 
 </p>
 
-<p>
+<footer>
 <ul id="policies">
-<li><a href="https://www.termsfeed.com/live/2ab2e0ad-65f6-4f82-b98a-b8f5ee73ac30" style="color:white;">
+<li><a href="https://www.termsfeed.com/live/2ab2e0ad-65f6-4f82-b98a-b8f5ee73ac30" style="color:grey;">
 terms of service
 </a></li>
 <li>
-<a href="https://www.termsfeed.com/live/7e6dc0ee-cf85-4fcf-b656-fa92d7b393ea" style="color:white;">
+<a href="https://www.termsfeed.com/live/7e6dc0ee-cf85-4fcf-b656-fa92d7b393ea" style="color:grey;">
 privacy policy
 </a></li>
 </ul>
-</p>
+</footer>
 <style>
-#policies li{
-font-size:15px;position:relative;bottom:-390px;left:500px;}
+
+footer {
+display:flex;
+background-color:black;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+justify-content:center;
+}
+
+#policies *{
+font-size:100%;
+}
 </style>
+
 </body>
-</head>
 </html>
