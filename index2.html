@@ -1,52 +1,301 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name='viewport' content="width=device-width, initial-scale=1.0">
 <body>
 <style>
+ 
+/*create columns*/
+
+.clmn1{width:25%;}
+.clmn2{width:50%;}
+.clmn3{width:75%;}
+.clmn4{width:100%;}
+
+
 body {
 background-color:powderblue;
 }
+
+
 </style>
-<h1>
-<a id="home" href="https://delvisl.github.io/vidorage.github.io/">
+
+<script>
+console.log(document.querySelector('body').style.height=`${window.innerHeight*0.2}px`)
+</script>
+
+
+<header class='header'>
+<h1 id="title">
+Vidorage
+</h1>
+
+
+<div id=logoimg>
+<img src='https://www.weareconvoy.com/wp-content/uploads/2021/03/3_clarke_and_company.jpg'  id="logo">
+</div>
+</header>
+
+
+<style>
+
+header {
+display:flex;
+height:20%;
+align-content:center;
+justify-content:center;
+flex-direction:row-reverse;
+width:20%;
+position:relative;
+left:40%;
+
+}
+
+header #title #logoimg{
+padding:7% 7% 7% 7%;
+
+}
+
+#title {
+text-color:blue;
+position:relative;
+text-shadow: 2px 1px;;
+align-self:center;
+width:100%;
+height:100%;
+font-size:150%;
+}
+
+
+#logoimg{
+width:25%;
+height:100%;
+text-align:right;
+}
+
+
+#logo {
+
+border-radius:25px;
+border-color:blue;
+border-style:dotted;
+height:75%;
+width:15px;
+
+}
+
+</style>
+
+
+<h2 class='nav_bar'>
+<a id="home" href="https://delvisl.github.io/vidorage.github.io/index2">
 HOME
 </a>
-</h1>
+</h2>
 <style>
-h1 {
+
+.nav_bar {
+border-radius:10px;
 background-color:black;
-color:white;
-font-size:30px;
+width:100%;
 text-align:center;
-width:110%;
-position:relative;
-right:50px;
 }
-#home {
+
+.nav_bar > a {
+text-decoration:none;
 color:white;
+border-radius:20px;
+
+}
+
+#home:hover{
+color:black;
+background-color:white;
+text-decoration:none;
 }
 </style>
-<h1>
-<h2>
-Vidorage is an intergrative system which randomly generates videos from Tiktok's Trending page using Tiktok's own Application programming interface. Vidorage will then go on to provide accessibility to store videos of a users choice. Stick around and enjoy Vidorage.
+
+<div class='clmn4'>
+<h3 class='ability'>
+Vidorage is a video storage application. It allows you to save all the videos that you love in one place. From tiktok or other video sharing medias, we look to provide a space for you to remember memorable videos. Stick around and enjoy Vidorage.
+<p>-Delvis</p>				
 <style>
-h2 {
-font-size:40px;
+
+.ability {
+
+text-align:center;
+padding:10% 2% 2% 2%;
+position:relative;
+
+}
+
+
+
+h3 {
 border-style:solid;
 text-align:center;
-margin:50px;
+color:white;
+background-color:black;
+border-radius:20px;
+}
+
+
+</style>
+</h3>	
+
+
+<h3 class='form'>
+<form action='mailto:delvis.avid@gmail.com'>
+	<label for='email'>From:</label>
+	<input type='text' name="email" placeholder='email address...'><br>	
+	<label for='comment'>Subject:</label>
+	<input type='text' placeholder='Message...' style="width:70%;height:200px;"><br>
+	<input type='submit' id='submit'>
+
+<style>
+label {
+margin:2%;
+}
+
+input {
+background-color:#F5F5DC;
+border-radius:5px;
+margin:2%;
+text-align:left;
+
+}
+#submit {
+color:white;
+background-color:green;
 }
 </style>
-</h2>
-<h2>
-The creator of Vidorage is <address> 
-<a id="creator_info" href="mailto:delvis.avid@gmail.com"> Delvis Langat</a>.</address>  For further information on the operational aspects and feedback to improve please contact via email provided.
-</h2>
+</h3>
+
+
+<h3 class='developerinfo'>
+<p>Developer:</p>
+<img src='https://media.licdn.com/dms/image/C4D03AQHWy7pRCwUrOQ/profile-displayphoto-shrink_400_400/0/1610839644286?e=2147483647&v=beta&t=2MqEkgdz-UmTdk49mBDEEpe__PBo-kGsb_ibEo7mwgc'><br>Delvis Langat<br></img>
+<p>
+For further information on the operational aspects and feedback to improve please fill out the email form. Thank you.
+</p>
+
+</h3>
+
+
+</div>
 <style>
+
+h3 p:first-child {
+text-align:left;
+}
+
+h3 >img {
+width:50%;
+border-radius:5px;
+}
+
 #creator_info {
 font-style: italic;
+
 }
+
+.clmn4 {
+display:grid;
+grid-template-columns:25% 50% 25%;
+width:97vw;
+}
+
+@media screen and (max-width:600px) {
+.clmn4 {
+display:grid;
+grid-template-columns:auto;
+grid-template-rows:auto auto auto;
+
+}
+.clmn4 .form {
+grid-row:2/3;
+}
+
+.clmn4 *{
+padding:10% 1% 10% 1%;
+}
+
+
+.developerinfo{
+display:flex;
+flex-direction:column;
+justify-content:center;
+width:100%;
+height:50%;
+
+}
+
+.developerinfo * {
+background-color:none;
+margin:-5px;
+font-size:70%;
+}
+
+.developerinfo img{
+width:25%;
+height:100%;
+align-self:center;
+}
+
+
+.developerinfo p:last-child {
+text-align:top;
+}
+
+}
+
+.clmn4 .form{
+background-color:white;
+color:Black;
+text-align:left;
+}
+
+
+
 </style>
+
+
+<footer>
+<ul id="policies">
+<li><a href="https://www.termsfeed.com/live/2ab2e0ad-65f6-4f82-b98a-b8f5ee73ac30" style="">
+terms of service
+</a></li>
+<li>
+<a href="https://www.termsfeed.com/live/7e6dc0ee-cf85-4fcf-b656-fa92d7b393ea" style="">
+privacy policy
+</a></li>
+</ul>
+</footer>
+
+<style>
+#policies li{
+font-size:15px;
+display:inline;
+margin:3px;
+}
+
+footer {
+background-color:black;
+position:fixed;
+left:0;
+bottom:0;
+width:100%;
+}
+
+ul {text-align:center;}
+
+li>a {
+margin:1%;
+color:white;
+}
+
+</style>
+
 </body>
 </head>
 <html>
