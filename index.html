@@ -147,6 +147,51 @@ margin-bottom:1px;
 
 </style>
 
+<button onclick='myfunc()'>
+<a id="k" download> Download </a>
+</button>
+</th>
+</table>
+
+</p>
+
+
+
+
+
+<footer>
+<ul id="policies">
+<li><a href="https://www.termsfeed.com/live/2ab2e0ad-65f6-4f82-b98a-b8f5ee73ac30">
+terms of service
+</a></li>
+<li>
+<a href="https://www.termsfeed.com/live/7e6dc0ee-cf85-4fcf-b656-fa92d7b393ea">
+privacy policy
+</a></li>
+</ul>
+</footer>
+<style>
+
+footer {
+display:flex;
+background-color:black;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+justify-content:center;
+}
+
+
+
+#policies *{
+font-size:100%;
+display:inline;
+margin:5px;
+color:white;
+}
+</style>
+
 <script>
 
 function videos() {
@@ -172,11 +217,6 @@ document.getElementById("addin").setAttribute
 
 <script src="https://c476-50-216-106-15.ngrok-free.app" id='vidfile'></script>
 
-<button onclick='myfunc()'>
-<a id="k" download> Download </a>
-</button>
-</th>
-</table>
 <script>
 function myfunc() {
 sw=document.getElementById("vidfile").src;
@@ -187,36 +227,6 @@ iframe.remove();
 }
 
 </script>
-
-</p>
-
-<footer>
-<ul id="policies">
-<li><a href="https://www.termsfeed.com/live/2ab2e0ad-65f6-4f82-b98a-b8f5ee73ac30" style="color:grey;">
-terms of service
-</a></li>
-<li>
-<a href="https://www.termsfeed.com/live/7e6dc0ee-cf85-4fcf-b656-fa92d7b393ea" style="color:grey;">
-privacy policy
-</a></li>
-</ul>
-</footer>
-<style>
-
-footer {
-display:flex;
-background-color:black;
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-justify-content:center;
-}
-
-#policies *{
-font-size:100%;
-}
-</style>
 
 </body>
 </html>
