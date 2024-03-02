@@ -37,10 +37,6 @@
 </div>
 
 <div>
-<svg width='100px' height='100px' xlmns="http://www.w3.org/2000/svg">
-  <foreignObject>
-<circle r='20' stroke='green'>
-  </foreignObject>
-</svg>
+<img src='sample.svg'>
 
 </div>
