@@ -25,7 +25,7 @@
   </h4>
   <p>
     This project utilizes API's such as META's basic API along side with Tiktok's various applications to work efficiently.
-  <img src='https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png'>
-  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png'>
+  <img height=50% width=50% src='https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png'>
+  <img height=50% width=50% src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png'>
   </p>
 </div>
