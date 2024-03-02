@@ -4,6 +4,7 @@
             <style>
                 h1 {
                 color:blue;
+		font-size:180px;
                 }
             </style>
 		<head>
