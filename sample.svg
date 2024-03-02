@@ -3,12 +3,15 @@
         <div xmlns="http://www.w3.org/1999/xhtml">
             <style>
                 h1 {
-                color:red;
+                color:blue;
                 }
             </style>
             <h1>
-                hello
+                hello world:
             </h1>
+            <p>
+                slsklkdlkdlkd
+            </p>
         </div>
     </foreignObject>
 </svg>
