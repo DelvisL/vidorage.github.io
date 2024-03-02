@@ -1,6 +1,6 @@
 <!DOCTYPE>
 <head>
-  <link rel="stylesheet" type="text/css" href="readme.css">
+  <link rel="stylesheet" type="text/css" src="readme.css">
 </head>
 <header>
   <h1>
@@ -32,6 +32,6 @@
   <p>
     This project utilizes API's such as META's basic API along side with Tiktok's various applications to work efficiently.
   </p>
-  <img left=10% height=20% width=20% src='https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png'>
-  <img height=25% width=25% src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png'>
+  <img align='center' height=20% width=20% src='https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png'>
+  <img height=25% width=25% align='center' src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png'>
 </div>
