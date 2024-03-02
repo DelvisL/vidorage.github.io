@@ -35,3 +35,10 @@
   <img align='center' height=20% width=20% src='https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png'>
   <img height=25% width=25% align='center' src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png'>
 </div>
+
+<div>
+<svg width='100' height='100' xlmns="http://www.w3.org/2000/svg">
+<circle r='20' stroke='green' />
+</svg>
+
+</div>
