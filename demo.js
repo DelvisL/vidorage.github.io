@@ -1,33 +1,57 @@
-const fs=require("fs");
-
+const fs=require('fs');
 const express=require("express");
 const http=require("http");
 const cors=require('cors');
 const {spawn}=require("node:child_process");
 const ngrok=require("@ngrok/ngrok");
 
+//getting the video downloaded
+function getVidId() {
+const _=spawn('curl "https://graph.instagram.com/6891097720989215/media?fields=id&access_token=IGQWROVFR4RFVMTGlaTkFTSElFZADc5NTJpdjRnaGhXQUdaNWF5ay1RTV9SUkIwVllna2Vob2s1T2dpWjZAZAclNHNC1hY3Y1VktNMFZAsdFdsamZACQ1Y2dGlaWUtkSFN4YjR3Vl9peFNkTmZAUU2dhaDBPWDM0aHVRbWsZD"',[],{shell:true});
+_.stdout.on('data',(data) => {
+const vids=JSON.parse(data.toString())
+const vidId=vids.data[0].id;
+getMediaURL(vidId);
+}
+)
+}
 
+getVidId();
 
-const subprocess=spawn('curl "https://scontent-bos5-1.cdninstagram.com/o1/v/t16/f1/m82/D94344B5ACB21D35A9B3F357E0E5C599_video_dashinit.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLmNsaXBzLnVua25vd24tQzMuNTc2LmRhc2hfYmFzZWxpbmVfMV92MSJ9&_nc_ht=scontent-bos5-1.cdninstagram.com&_nc_cat=107&vs=387325513987418_2448746689&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC9EOTQzNDRCNUFDQjIxRDM1QTlCM0YzNTdFMEU1QzU5OV92aWRlb19kYXNoaW5pdC5tcDQVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dBaXZLeGswdzVfZmF6b0RBTmUta3dYcUk3SW1icV9FQUFBRhUCAsgBACgAGAAbAYgHdXNlX29pbAExFQAAJtCGsabV37FAFQIoAkMzLBdAI0QYk3S8ahgSZGFzaF9iYXNlbGluZV8xX3YxEQB1AAA%3D&ccb=9-4&oh=00_AfA8m53phz8ks4dG2SWHEQR2k4IPE7NtSy4gIFXPRkjJ2w&oe=65BF3187&_nc_sid=1d576d&_nc_rid=d610c6eb7b" -k -O',{
-shell:true})
+function getMediaURL(vidId) {
+const reqUrl=`https://graph.instagram.com/${vidId}?size=m&fields=media_type,caption,media_url&access_token=IGQWROVFR4RFVMTGlaTkFTSElFZADc5NTJpdjRnaGhXQUdaNWF5ay1RTV9SUkIwVllna2Vob2s1T2dpWjZAZAclNHNC1hY3Y1VktNMFZAsdFdsamZACQ1Y2dGlaWUtkSFN4YjR3Vl9peFNkTmZAUU2dhaDBPWDM0aHVRbWsZD`;
+const post=spawn(`curl "${reqUrl}"`,[],{shell:true});
+post.stdout.on('data',(data)=> {
+const mediaURL=JSON.parse(data);
 
+downloadVid(mediaURL);
+}
+)
+}
 
-addr='https://www.tiktok.com/@trendingcapcuttemplates/video/7309925081671552288';
+function downloadVid(mediaURL) {
+const vid=spawn(`curl "${mediaURL.media_url}" -O`,[],{shell:true});
+const filename=new URL(mediaURL.media_url).pathname.split("/").slice(-1)[0];
+pup(filename);
+}
 
-const hostname='10.246.204.30';
+//sending video to user
 const port=8000;
 
 
-async function pup() {
+async function pup(filename) {
 app=express();
-app.use(cors())
-ngrok.authtoken('2c0HxbznQOxNjyaER5kOq0p0dKJ_5Mak8yptog5i8NgqFaPWL');
-app.get("*", async (req,res) => {
-res.download("\D94344B5ACB21D35A9B3F357E0E5C599_video_dashinit.mp4",()=>{
-;})
+app.use(cors());
+ngrok.authtoken(authtoken);
+app.get("/", async (req,res) => {
+res.download(filename,(err)=>{
+if (err) {console.log(err);}
+else {console.log('downloaded successfully');}
+})
+
 })
 app.listen(8000,()=>{
-console.log('listenting')
+console.log('listening')
 })
 }
 
@@ -41,8 +65,7 @@ console.log(`listening on https://${hostname}:${port}`);
 })
 }
 
-function delete_file() {
-fs.rmSync('\D94344B5ACB21D35A9B3F357E0E5C599_video_dashinit.mp4')
+function delete_file(filename) {
+fs.rmSync(filename);
 }
 
-pup();
