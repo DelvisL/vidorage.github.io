@@ -88,7 +88,7 @@ width:15px;
 
 
 <h2 class='nav_bar'>
-<a id="home" href="https://delvisl.github.io/vidorage.github.io">
+<a id="home" href="file:///C:/Users/Delvis/Documents/Vidorage%20Website/index.html">
 HOME
 </a>
 </h2>
@@ -122,10 +122,10 @@ Vidorage is a video storage application. It allows you to save all the videos th
 <style>
 
 .ability {
-
 text-align:center;
-padding:10% 2% 2% 2%;
+padding:2% 2% 2% 2%;
 position:relative;
+font-size:3vw;
 
 }
 
@@ -189,11 +189,6 @@ h3 p:first-child {
 text-align:left;
 }
 
-h3 >img {
-width:50%;
-border-radius:5px;
-}
-
 #creator_info {
 font-style: italic;
 
@@ -201,8 +196,28 @@ font-style: italic;
 
 .clmn4 {
 display:grid;
-grid-template-columns:25% 50% 25%;
-width:97vw;
+grid-template-rows:auto auto auto;
+height:100vw;
+width:100%;
+overflow:auto;
+}
+
+.clmn4 * {
+padding:1% 1% 1% 1%;
+}
+
+.ability {
+overflow:auto;
+font-size:100%;
+}
+
+.form {
+overflow:auto;
+font-size:100%;
+}
+
+.developerinfo {
+overflow:auto;
 }
 
 @media screen and (max-width:600px) {
@@ -210,41 +225,38 @@ width:97vw;
 display:grid;
 grid-template-columns:auto;
 grid-template-rows:auto auto auto;
+}
 
-}
-.clmn4 .form {
-grid-row:2/3;
-}
 
 .clmn4 *{
-padding:10% 1% 10% 1%;
+padding:1% 1% 1% 1%;
 }
-
 
 .developerinfo{
 display:flex;
 flex-direction:column;
 justify-content:center;
 width:100%;
-height:50%;
-
+height:50vw;
+overflow:auto;
 }
 
 .developerinfo * {
 background-color:none;
-margin:-5px;
+margin:-2px;
 font-size:70%;
 }
 
-.developerinfo img{
+.developerinfo img {
 width:25%;
-height:100%;
-align-self:center;
+border-radius:10%;
+position:relative;
+margin-left:auto;
+margin-right:auto;
 }
 
-
 .developerinfo p:last-child {
-text-align:top;
+text-align:justify;
 }
 
 }
@@ -281,19 +293,31 @@ margin:3px;
 
 footer {
 background-color:black;
-position:fixed;
-left:0;
-bottom:0;
-width:100%;
+position:relative;
+right:1%;
+bottom:10%;
+width:100vw;
+height:30%;
+
 }
 
 ul {text-align:center;}
 
 li>a {
-margin:1%;
+margin:2vw;
 color:white;
 }
 
+@media screen and (max-width:600px) {
+footer {
+background-color:black;
+position:relative;
+right:3%;
+top:175vw;
+width:100vw;
+height:30%;
+}
+}
 </style>
 
 </body>
