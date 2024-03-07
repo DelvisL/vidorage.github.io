@@ -4,6 +4,7 @@ const http=require("http");
 const cors=require('cors');
 const {spawn}=require("node:child_process");
 const ngrok=require("@ngrok/ngrok");
+const bodyParser=require("body-parser");
 
 //getting the video downloaded
 function getVidId() {
@@ -23,7 +24,6 @@ const reqUrl=`https://graph.instagram.com/${vidId}?size=m&fields=media_type,capt
 const post=spawn(`curl "${reqUrl}"`,[],{shell:true});
 post.stdout.on('data',(data)=> {
 const mediaURL=JSON.parse(data);
-
 downloadVid(mediaURL);
 }
 )
@@ -37,13 +37,24 @@ pup(filename);
 
 //sending video to user
 const port=8000;
-
+const authtoken='2c0HxbznQOxNjyaER5kOq0p0dKJ_5Mak8yptog5i8NgqFaPWL';
 
 async function pup(filename) {
 app=express();
 app.use(cors());
+app.use(bodyParser.text());
 ngrok.authtoken(authtoken);
+
+//Handle POST request//
+app.post("/",async (req,res) => {
+console.log("Post request");
+console.log(req.body);
+});
+
+//handle GET requests//
 app.get("/", async (req,res) => {
+console.log(req.headers);
+console.log(req.get("host"));
 res.download(filename,(err)=>{
 if (err) {console.log(err);}
 else {console.log('downloaded successfully');}
@@ -55,15 +66,6 @@ console.log('listening')
 })
 }
 
-
-function w() {
-http.createServer((req,res)=>{
-res.write("hi");
-res.end();}
-).listen(()=>{
-console.log(`listening on https://${hostname}:${port}`);
-})
-}
 
 function delete_file(filename) {
 fs.rmSync(filename);
