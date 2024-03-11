@@ -3,52 +3,72 @@
 <head>
 <meta name='viewport' content="width=device-width, initial-scale=1.0">
 <body>
+
 <style>
- 
-/*create columns*/
-
-.clmn1{width:25%;}
-.clmn2{width:50%;}
-.clmn3{width:75%;}
-.clmn4{width:100%;}
-
-
 body {
-background-color:powderblue;
+width:100vw;
+height:100vh;
+background-color:lightblue;
+margin:0;
+max-width:100%;
 }
 
+.clmn1 {
+height:5%;
+width:100%;
+background-color:none;
+position:relative;
+}
+
+.clmn2{
+height:90%;
+width:100%;
+background-color:none;
+position:relative;
+left:0%;
+}
+
+.clmn3 {
+height:5%;
+width:100%;
+background-color:none;
+position:relative;
+top:0%;
+}
+
+.clmn4 {
+width:100%;
+}
 
 </style>
 
-<script>
-console.log(document.querySelector('body').style.height=`${window.innerHeight*0.2}px`)
-</script>
-
-
+<div class="clmn1">
 <header class='header'>
 <h1 id="title">
 Vidorage
 </h1>
 
-
 <div id=logoimg>
 <img src='https://www.weareconvoy.com/wp-content/uploads/2021/03/3_clarke_and_company.jpg'  id="logo">
 </div>
 </header>
-
+</div>
 
 <style>
 
+.clmn1 {
+}
+
 header {
 display:flex;
-height:20%;
+height:100%;
 align-content:center;
 justify-content:center;
 flex-direction:row-reverse;
 width:20%;
 position:relative;
 left:40%;
-
+background-color:none;
 }
 
 header #title #logoimg{
@@ -79,16 +99,16 @@ text-align:right;
 border-radius:25px;
 border-color:blue;
 border-style:dotted;
-height:75%;
+height:30px;
 width:15px;
 
 }
 
 </style>
 
-
+<div class="clmn2">
 <h2 class='nav_bar'>
-<a id="home" href="file:///C:/Users/Delvis/Documents/Vidorage%20Website/index.html">
+<a id="home" href="https://delvisl.github.io/vidorage.github.io/">
 HOME
 </a>
 </h2>
@@ -126,7 +146,6 @@ text-align:center;
 padding:2% 2% 2% 2%;
 position:relative;
 font-size:3vw;
-
 }
 
 
@@ -174,7 +193,7 @@ background-color:green;
 
 <h3 class='developerinfo'>
 <p>Developer:</p>
-<img src='https://media.licdn.com/dms/image/C4D03AQHWy7pRCwUrOQ/profile-displayphoto-shrink_400_400/0/1610839644286?e=2147483647&v=beta&t=2MqEkgdz-UmTdk49mBDEEpe__PBo-kGsb_ibEo7mwgc'><br>Delvis Langat<br></img>
+<img src='https://media.licdn.com/dms/image/C4D03AQHWy7pRCwUrOQ/profile-displayphoto-shrink_400_400/0/1610839644286?e=2147483647&v=beta&t=2MqEkgdz-UmTdk49mBDEEpe__PBo-kGsb_ibEo7mwgc'><p>Delvis Langat<p></img>
 <p>
 For further information on the operational aspects and feedback to improve please fill out the email form. Thank you.
 </p>
@@ -184,67 +203,108 @@ For further information on the operational aspects and feedback to improve pleas
 
 </div>
 <style>
-
 h3 p:first-child {
 text-align:left;
 }
 
-#creator_info {
-font-style: italic;
-
-}
-
 .clmn4 {
 display:grid;
-grid-template-rows:auto auto auto;
-height:100vw;
-width:100%;
-overflow:auto;
+grid-template-columns:33% 66%;
+grid-template-rows:auto auto;
+box-boxing: border-box;
+height:80%;
+background-color:none;
 }
 
 .clmn4 * {
-padding:1% 1% 1% 1%;
+padding:1%;
+margin-left:2%;
+margin-right:1%;
+margin-top:1%;
+margin-bottom:1%;
 }
 
 .ability {
-overflow:auto;
 font-size:100%;
+overflow:auto;
 }
 
 .form {
 overflow:auto;
 font-size:100%;
+background-color:white;
+color:Black;
+text-align:left;
+grid-row:1/ span 2;
+grid-column: 2/3;
+width:95%;
 }
 
+
 .developerinfo {
+display:flex;
+flex-direction:column;
+justify-content:center;
 overflow:auto;
 }
+
+.developerinfo img {
+width:25%;
+border-radius:25%;
+position:relative;
+margin-left:auto;
+margin-right:auto;
+}
+
+.developerinfo * {
+margin:0;
+font-size:100%;
+padding:2%;
+}
+
 
 @media screen and (max-width:600px) {
 .clmn4 {
 display:grid;
 grid-template-columns:auto;
 grid-template-rows:auto auto auto;
+box-boxing: border-box;
+height:90%;
 }
 
-
 .clmn4 *{
-padding:1% 1% 1% 1%;
+padding:1%;
+margin:2%;
+}
+
+.ability {
+font-size:100%;
+width:auto;
+}
+
+.form {
+overflow:auto;
+font-size:100%;
+background-color:white;
+color:Black;
+text-align:left;
+grid-row:2/3;
+grid-column:1/1;
+width:auto;
 }
 
 .developerinfo{
 display:flex;
 flex-direction:column;
 justify-content:center;
-width:100%;
-height:50vw;
 overflow:auto;
+height:100%;
 }
 
 .developerinfo * {
 background-color:none;
-margin:-2px;
-font-size:70%;
+font-size:50%;
+margin:0;
 }
 
 .developerinfo img {
@@ -259,19 +319,12 @@ margin-right:auto;
 text-align:justify;
 }
 
+
 }
-
-.clmn4 .form{
-background-color:white;
-color:Black;
-text-align:left;
-}
-
-
-
 </style>
+</div>
 
-
+<div class="clmn3">
 <footer>
 <ul id="policies">
 <li><a href="https://www.termsfeed.com/live/2ab2e0ad-65f6-4f82-b98a-b8f5ee73ac30" style="">
@@ -283,6 +336,7 @@ privacy policy
 </a></li>
 </ul>
 </footer>
+</div>
 
 <style>
 #policies li{
@@ -294,10 +348,8 @@ margin:3px;
 footer {
 background-color:black;
 position:relative;
-right:1%;
-bottom:10%;
-width:100vw;
-height:30%;
+width:100%;
+height:100%;
 
 }
 
@@ -310,12 +362,10 @@ color:white;
 
 @media screen and (max-width:600px) {
 footer {
-background-color:black;
 position:relative;
-right:3%;
-top:175vw;
-width:100vw;
-height:30%;
+width:100%;
+height:100%;
+left:0%;
 }
 }
 </style>
